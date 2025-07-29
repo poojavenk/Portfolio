@@ -1,0 +1,375 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    color: #333;
+    background: #f5f6f8;
+    transition: background 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+  }
+  
+  /* Tech Grid Background */
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0a192f, #172a45);
+    background-size: 400% 400%;
+    animation: moveGradient 20s ease infinite;
+  }
+  
+  @keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Subtle grid lines overlay (simulate tech feel) */
+  .background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/grid-pattern.png"); /* Your tech grid overlay */
+    opacity: 0.1;
+  }
+  
+  /* Navbar */
+  header {
+    background: rgba(255,255,255,0.85);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(6px);
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00d1ff;
+  }
+  
+  /* Dark Mode Toggle */
+  #themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #007bff;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  #themeToggle:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+  }
+  
+  /* Section Layout (Split) */
+  section {
+    padding: 4rem 1rem;
+  }
+  .split {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .split .content {
+    flex: 1;
+    min-width: 300px;
+  }
+  .split .content img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding: 4rem 2rem;
+    color: white;
+  }
+  .hero .left { flex: 3; }
+  .hero .right { flex: 3; display: flex; justify-content: center; }
+  
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #00d1ff;
+    box-shadow: 0 0 25px rgba(0,209,255,0.6);
+    animation: glowPulse 4s infinite;
+  }
+  
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(0,209,255,0.6); }
+    50% { box-shadow: 0 0 50px rgba(0,209,255,1); }
+  }
+  
+  /* Floating Animation for Illustrations */
+  .float {
+    animation: floatAnim 6s ease-in-out infinite;
+  }
+  @keyframes floatAnim {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+    background: #00d1ff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+    background: #00a6cc;
+  }
+  .btn.secondary {
+    background: #333;
+  }
+  .btn.secondary:hover {
+    background: #555;
+  }
+  
+  /* Social Links */
+  .social-links {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+  }
+  .social-links a {
+    font-size: 1.8rem;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-links a:hover {
+    transform: scale(1.3);
+    color: #ffcc00;
+  }
+  footer .social-links a { color: #00d1ff; }
+  
+  /* Skills Bars */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+  }
+  .fill {
+    background: #00d1ff;
+    height: 100%;
+    width: 0;
+    transition: width 2s ease;
+  }
+  
+  /* Fade-in Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-in-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Project Card (Split Layout already handles positioning) */
+  .project-card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  
+  /* Dark Mode Overrides */
+  body.dark {
+    background: #5184d0;
+    color: #10171e;
+  }
+  body.dark header { background: rgba(20,20,20,0.9); }
+  body.dark footer { background: #1a1f24; }
+  body.dark .btn { background: #00a6cc; }
+  body.dark .btn.secondary { background: #444; }
+  body.dark .bar { background: #333; }
+  body.dark .fill { background: #00d1ff; }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .split, .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero .right, .split .right {
+      margin-top: 2rem;
+    }
+    .social-links {
+      justify-content: center;
+    }
+  }
+  /* Card Styling */
+.card {
+  background: rgba(20, 30, 50, 0.8);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+}
+
+/* AI Background Blobs */
+/* Dark Blue Background */
+/* Background */
+body {
+  background-color: #0a0f2c; /* Dark Blue */
+  color: #fff;
+}
+
+/* Card Styling */
+.card {
+  background: rgba(20, 30, 50, 0.85);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.7);
+}
+
+/* AI Background Blobs - Pink Shades */
+.ai-background span {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,105,180,0.4), rgba(255,182,193,0.2));
+  animation: floatBlob 20s ease-in-out infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+.ai-background span:nth-child(1) { width: 300px; height: 300px; top: 5%; left: 10%; animation-delay: 0s; }
+.ai-background span:nth-child(2) { width: 200px; height: 200px; top: 40%; left: 80%; animation-delay: 4s; }
+.ai-background span:nth-child(3) { width: 400px; height: 400px; bottom: 10%; left: 50%; animation-delay: 8s; }
+.ai-background span:nth-child(4) { width: 250px; height: 250px; top: 70%; left: 15%; animation-delay: 12s; }
+.ai-background span:nth-child(5) { width: 350px; height: 350px; top: 20%; left: 60%; animation-delay: 16s; }
+
+@keyframes floatBlob {
+  0%, 100% { transform: translateY(0) scale(1); filter: hue-rotate(0deg); }
+  50% { transform: translateY(-40px) scale(1.1); filter: hue-rotate(45deg); }
+}
+/* Starfield Background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: blink 3s infinite ease-in-out alternate;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Shooting Star (Glow Trail) */
+.shooting-star {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0));
+  opacity: 0.8;
+  transform: rotate(-45deg);
+  animation: shoot 5s linear infinite;
+}
+
+@keyframes shoot {
+  0% { transform: translate(-200px, -200px) rotate(-45deg); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate(100vw, 100vh) rotate(-45deg); opacity: 0; }
+}

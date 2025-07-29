@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja V - Java Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="stars"></div>
+  <div class="ai-background">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+
+  <header>
+    <nav>
+      <h1 class="logo">Pooja V</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+ 
+  <section class="hero fade-in">
+    <div class="content left">
+      <h2>Hello, I’m <span class="highlight">Pooja V</span></h2>
+      <p>I specialize in developing dynamic and responsive web applications using Java, Spring Boot, and related frameworks. My role focuses on building RESTful APIs, integrating with databases, and creating seamless user experiences for web platforms. I work on implementing secure and scalable backend systems, collaborating with frontend teams, and optimizing applications for performance and reliability</p>
+      <div class="social-links">
+        <a href="https://github.com/YOUR_GITHUB" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="buttons">
+        <a href="#projects" class="btn">See My Work</a>
+        <a href="Pooja_v_Resume.pdf" download class="btn secondary">Download Resume</a>
+      </div>
+    </div>
+    <div class="content right">
+      <img src="images/pooja.jpg" alt="Pooja V" class="profile-pic glowing">
+    </div>
+  </section>
+
+  
+  <section id="about" class="split fade-in">
+    <div class="content left">
+      <h3>About Me</h3>
+      <p>
+        I am an Electronics and Communication Engineering graduate with a strong interest in building a career in the IT field. Passionate about learning and 
+        adapting to new technologies, I am focused on enhancing my skills in programming, web development, and software tools to transition effectively into the tech industry. 
+        My goal is to continuously upskill, work on real-world projects, and contribute to innovative solutions while growing as a professional in IT.
+      </p>
+    </div>
+    <div class="content right">
+      <img src="images/image.png" alt="Tech Illustration" class="float" width="300" height="200">
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="split fade-in">
+    <div class="content left">
+      <h3>Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill"><span>Core Java</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+        <div class="skill"><span>J2EE</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+        <div class="skill"><span>SQL</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+        <div class="skill"><span>HTML & CSS</span><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+        <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="split fade-in">
+    <div class="content left">
+      <h1>Academic Project</h1>
+      <h2>Centralized Fault Monitoring System</h2>
+      <p>
+        By integrating advanced hardware and smart software, this system enables comprehensive 
+remote monitoring and control, optimizing energy usage through GPS-based automation, and 
+ensuring rapid fault detection and maintenance.
+      </p>
+      <h1>Technology used</h1>
+      <p>
+        <h2>Software :</h2> Ardino Ide And ThingSpeaks.
+      </p>
+      <p>
+        <h2>Hardware :</h2> Node MCU , ESP8268 , Relay Module , Neo 6M GSM Module And Reactifer.
+      </p>
+    </div>
+    <div class="content right">
+      <img src="images/PROJECT .jpg" alt="Project Illustration" class="float" width="300" height="200">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact fade-in">
+    <h3>Contact Me</h3>
+    <p>Email: <strong>poojav1129@gmail.com</strong></p>
+    <form id="contactForm">
+      <input type="text" name="user_name" placeholder="Your Name" required height="60">
+      <input type="email" name="user_email" placeholder="Your Email" required> <br> <br>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea> <br>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Pooja V | Java Developer</p>
+    <div class="social-links">
+      <a href="https://github.com/poojavenk" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
